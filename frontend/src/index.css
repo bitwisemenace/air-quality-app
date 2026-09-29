@@ -1,0 +1,59 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-navy-950 text-slate-100 font-sans antialiased;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(42, 69, 112, 0.35), transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(74, 222, 128, 0.06), transparent 40%);
+  background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a4570;
+  border-radius: 8px;
+}
+
+.leaflet-container {
+  background: #0a1428 !important;
+  border-radius: 1rem;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #0f1c38 !important;
+  color: #f1f5f9 !important;
+  border-radius: 0.75rem !important;
+  border: 1px solid #1e3358;
+}
+.leaflet-popup-tip {
+  background: #0f1c38 !important;
+}
+.leaflet-popup-content {
+  margin: 12px 14px !important;
+}
+
+.aqi-marker-pulse {
+  border-radius: 999px;
+  box-shadow: 0 0 0 rgba(255,255,255,0.4);
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.35); }
+  70% { box-shadow: 0 0 0 12px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
